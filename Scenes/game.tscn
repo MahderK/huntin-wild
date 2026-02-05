@@ -1,6 +1,10 @@
-[gd_scene format=3 uid="uid://dxgmckeagdnej"]
+[gd_scene load_steps=2 format=3 uid="uid://dxgmckeagdnej"]
+
+[ext_resource type="PackedScene" uid="uid://dg3n7clni2qkc" path="res://Scenes/Player.tscn" id="1_ebmjs"]
 
 [node name="Game" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
-format = 2
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_ebmjs")]
+position = Vector2(634, 329)
+motion_mode = 0
+script = null
