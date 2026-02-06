@@ -159,6 +159,7 @@ scale = Vector2(1.5, 1.5)
 disable_mode = 1
 safe_margin = 0.001
 script = ExtResource("1_cvnsp")
+speed = 150
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
