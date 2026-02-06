@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://btrqdttwrj4qa"]
+
+[ext_resource type="AudioStream" uid="uid://wwt4e6oce4r0" path="res://Assets/music/Redneck Souljers - Day and Night (Kid Cudi Day 'N' Nite remix) - Redneck Souljers.mp3" id="1_wrh0v"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_wrh0v")
+autoplay = true
