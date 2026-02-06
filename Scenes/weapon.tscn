@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvups3ge4uqdn"]
+
+[ext_resource type="Texture2D" uid="uid://dfgrvt3gc55sw" path="res://Assets/1.png" id="1_o2wld"]
+[ext_resource type="Script" uid="uid://418pk7o4o32n" path="res://Scripts/weapon.gd" id="2_8xwfw"]
+
+[node name="Weapon" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_o2wld")
+region_enabled = true
+region_rect = Rect2(63.9599, 84, 32.0401, 14)
+script = ExtResource("2_8xwfw")
