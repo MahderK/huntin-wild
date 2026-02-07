@@ -13,11 +13,11 @@ func get_input():
 
 	if Input.is_action_just_pressed("cycle_tool_up"):
 		current_tool = (current_tool + 1) % Tools.size()
-		print("Equiped seed", Tools.keys()[current_tool])
+		print("Equiped seed: ", Tools.keys()[current_tool])
 
 	if Input.is_action_just_pressed("cycle_tool_down"):
 		current_tool = (current_tool - 1 + Tools.size()) % Tools.size()
-		print("Equiped seed", Tools.keys()[current_tool])
+		print("Equiped seed: ", Tools.keys()[current_tool])
 
 	update_display()
 

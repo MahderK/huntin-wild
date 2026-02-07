@@ -3,6 +3,7 @@ extends Node2D
 @export var day_night_gradient: Gradient
 @onready var modulate_node = $CanvasModulate
 @onready var audio_player = $bg_music
+@onready var equipment = $Player/Equipment
 @onready var shotgun = $Player/Weapon
 
 var battle_music = preload("res://Assets/music/🪕 Banjo Bloodbath🩸 ｜ Appalachian Anarchy ｜ 🪕 Bluegrass Power Metal 🤘 - Appalachian Anarchy.mp3")
@@ -15,9 +16,11 @@ func _on_hud_time_change(total_seconds:Variant) -> void:
 	var music_track : AudioStream
 
 	if total_seconds >= 900:
+		equipment.visible = false
 		shotgun.visible = true
 		music_track = battle_music
 	else:
+		equipment.visible = true
 		shotgun.visible = false
 		music_track = day_music
 
