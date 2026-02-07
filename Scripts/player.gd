@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var display_equipment = $Equipment
 
 enum Tools {STRAWBERRY, LEAK, POTATO, ONION, SHOVEL}
-var current_tool = Tools.STRAWBERRY
+var current_tool: Tools = Tools.STRAWBERRY
 
 func get_input():
 

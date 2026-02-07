@@ -10,12 +10,12 @@ var battle_music = preload("res://Assets/music/🪕 Banjo Bloodbath🩸 ｜ Appa
 var day_music = preload("res://Assets/music/Slow Banjo from the heart 🪕♥️ - Slow Banjo.mp3")
 
 func _on_hud_time_change(total_seconds:Variant) -> void:
-	var progress = float(total_seconds) / 1000.0
+	var progress = float(total_seconds) / 240.0
 	var final_color = day_night_gradient.sample(progress)
 	modulate_node.color = final_color
 	var music_track : AudioStream
 
-	if total_seconds >= 900:
+	if total_seconds >= 210:
 		equipment.visible = false
 		shotgun.visible = true
 		music_track = battle_music
