@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://dvexbqg2qy8mt"]
+[gd_scene load_steps=23 format=3 uid="uid://dvexbqg2qy8mt"]
 
 [ext_resource type="Script" uid="uid://pn13mmmgavkw" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://kvb2arahnkhu" path="res://Assets/Prototype_Character/prototype_character.png" id="1_v0iea"]
+[ext_resource type="PackedScene" uid="uid://cp31n0ibddych" path="res://Scenes/equipment.tscn" id="3_6t5aa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v0iea"]
 atlas = ExtResource("1_v0iea")
@@ -171,3 +172,7 @@ shape = SubResource("CapsuleShape2D_fs7ks")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+
+[node name="Equipment" parent="." instance=ExtResource("3_6t5aa")]
+position = Vector2(0, -12)
+scale = Vector2(0.625, 0.625)

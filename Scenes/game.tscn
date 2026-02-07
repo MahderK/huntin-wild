@@ -468,6 +468,7 @@ layer_3/tile_data = PackedInt32Array(458810, 589827, 1, 524346, 589827, 2, 58988
 position = Vector2(980, 208)
 
 [node name="Weapon" parent="Player" instance=ExtResource("9_ldgsr")]
+visible = false
 position = Vector2(6, 4.66667)
 
 [node name="HUD" parent="." instance=ExtResource("18_85qyi")]
