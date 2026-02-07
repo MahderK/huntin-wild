@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://15bvx7lw22ts"]
+[gd_scene load_steps=3 format=3 uid="uid://15bvx7lw22ts"]
 
 [ext_resource type="AudioStream" uid="uid://duh1wbmqvxu33" path="res://Assets/music/Slow Banjo from the heart 🪕♥️ - Slow Banjo.mp3" id="1_wrh0v"]
+[ext_resource type="Script" uid="uid://m21ifykynb7q" path="res://Scripts/bg_music.gd" id="2_0kug2"]
 
 [node name="bg_music" type="AudioStreamPlayer"]
 stream = ExtResource("1_wrh0v")
 autoplay = true
 bus = &"music"
+script = ExtResource("2_0kug2")

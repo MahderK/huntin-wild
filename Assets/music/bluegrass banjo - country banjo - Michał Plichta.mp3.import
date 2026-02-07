@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bstw3jc1h4n18"
+path="res://.godot/imported/bluegrass banjo - country banjo - Michał Plichta.mp3-67f97ebdbc5005faf256619aa31955fa.mp3str"
+
+[deps]
+
+source_file="res://Assets/music/bluegrass banjo - country banjo - Michał Plichta.mp3"
+dest_files=["res://.godot/imported/bluegrass banjo - country banjo - Michał Plichta.mp3-67f97ebdbc5005faf256619aa31955fa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var label = $Clock
 @onready var timer = $Timer
-@onready var tot_time_in_sec : int = 300
+@onready var tot_time_in_sec : int = 890
 
 signal time_change(total_seconds)
 
