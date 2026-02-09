@@ -21,7 +21,7 @@ func _input_event(viewport, event, shape_idx):
 func collect_sun():
 	# Add value to your GameManager
 	if "sun_count" in GameManager:
-		GameManager.sun_count += sun_value
+		GameManager.sun_count += ( 1 * GameManager.sun_multiplier)
 		print("Collected! Total Sun: ", GameManager.sun_count)
 	
 	# Play sound or particles here if you have them!

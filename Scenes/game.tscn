@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dxgmckeagdnej"]
+[gd_scene load_steps=42 format=3 uid="uid://dxgmckeagdnej"]
 
 [ext_resource type="PackedScene" uid="uid://dvexbqg2qy8mt" path="res://Scenes/player.tscn" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://bfmttqoe8icjx" path="res://Scripts/game.gd" id="1_iivbl"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://tt50wihhycaw" path="res://Scenes/farm_land.tscn" id="21_exi56"]
 [ext_resource type="Script" uid="uid://cimxvigdl865" path="res://Scripts/spawner.gd" id="22_7t8sx"]
 [ext_resource type="PackedScene" uid="uid://c2wjl0xl021jt" path="res://Scenes/enemy.tscn" id="23_mg4q0"]
+[ext_resource type="PackedScene" uid="uid://c8hewkmnopiym" path="res://Scenes/upgrade_menu.tscn" id="24_vm72l"]
 
 [sub_resource type="Gradient" id="Gradient_iivbl"]
 offsets = PackedFloat32Array(0, 0.325581, 0.542636, 0.751938, 1)
@@ -489,6 +490,8 @@ script = ExtResource("22_7t8sx")
 enemy_scene = ExtResource("23_mg4q0")
 
 [node name="Timer" type="Timer" parent="Spawner"]
+
+[node name="UpgradeMenu" parent="." instance=ExtResource("24_vm72l")]
 
 [connection signal="time_change" from="HUD" to="." method="_on_hud_time_change"]
 [connection signal="current_music" from="bg_music" to="." method="_on_bg_music_current_music"]
