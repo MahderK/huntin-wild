@@ -18,9 +18,9 @@ text = "06:00"
 [node name="Timer" type="Timer" parent="."]
 
 [node name="Pickup" type="HBoxContainer" parent="."]
-offset_left = 1112.0
-offset_right = 1152.0
-offset_bottom = 40.0
+offset_left = 1076.0
+offset_right = 1116.0
+offset_bottom = 49.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Pickup"]
 texture_filter = 1
@@ -28,7 +28,7 @@ position = Vector2(-32, 25)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_fccik")
 
-[node name="Amount" type="Label" parent="Pickup"]
+[node name="SunCounter" type="Label" parent="Pickup"]
 texture_filter = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_e0onf")

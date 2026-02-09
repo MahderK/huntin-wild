@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://dvexbqg2qy8mt"]
+[gd_scene load_steps=24 format=3 uid="uid://dvexbqg2qy8mt"]
 
 [ext_resource type="Script" uid="uid://pn13mmmgavkw" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://kvb2arahnkhu" path="res://Assets/Prototype_Character/prototype_character.png" id="1_v0iea"]
 [ext_resource type="PackedScene" uid="uid://cp31n0ibddych" path="res://Scenes/equipment.tscn" id="3_6t5aa"]
+[ext_resource type="AudioStream" uid="uid://wifx0h2y45d" path="res://Assets/SFX/dennish18-shotgun-146188.mp3" id="4_vgqql"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v0iea"]
 atlas = ExtResource("1_v0iea")
@@ -155,7 +156,7 @@ animations = [{
 radius = 4.0
 height = 14.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(1.5, 1.5)
 disable_mode = 1
 safe_margin = 0.001
@@ -176,3 +177,11 @@ zoom = Vector2(3, 3)
 [node name="Equipment" parent="." instance=ExtResource("3_6t5aa")]
 position = Vector2(0, -12)
 scale = Vector2(0.625, 0.625)
+
+[node name="GunMuzzle" type="Marker2D" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="GunMuzzle"]
+target_position = Vector2(50, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="GunMuzzle"]
+stream = ExtResource("4_vgqql")

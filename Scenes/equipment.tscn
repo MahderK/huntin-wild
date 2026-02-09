@@ -6,6 +6,7 @@
 [node name="Equipment" type="Node2D"]
 
 [node name="Strawberry" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 texture = ExtResource("1_roj3i")
 region_enabled = true
@@ -26,11 +27,10 @@ region_enabled = true
 region_rect = Rect2(112, 80, 16, 16)
 
 [node name="Onion" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
 texture = ExtResource("1_roj3i")
 region_enabled = true
-region_rect = Rect2(112, 80, 16, 16)
+region_rect = Rect2(112, 112, 16, 16)
 
 [node name="Shovel" type="Sprite2D" parent="."]
 visible = false

@@ -19,10 +19,12 @@ func _on_hud_time_change(total_seconds:Variant) -> void:
 		equipment.visible = false
 		shotgun.visible = true
 		music_track = battle_music
+		GameManager.is_night = true
 	else:
 		equipment.visible = true
 		shotgun.visible = false
 		music_track = day_music
+		GameManager.is_night = false
 
 	if audio_player.stream == music_track:
 		return

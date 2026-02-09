@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://c2wjl0xl021jt"]
+
+[ext_resource type="Script" uid="uid://bxkqv87c8lgv8" path="res://Scripts/enemy.gd" id="1_1f0kj"]
+[ext_resource type="Texture2D" uid="uid://dj6ljsfjgut7m" path="res://Assets/Farm RPG FREE 16x16 - Tiny Asset Pack/Farm Animals/Chicken Red.png" id="1_hghv2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1f0kj"]
+atlas = ExtResource("1_hghv2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afpow"]
+atlas = ExtResource("1_hghv2")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_287tu"]
+atlas = ExtResource("1_hghv2")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0830c"]
+atlas = ExtResource("1_hghv2")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ghaa6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1f0kj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afpow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_287tu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0830c")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1dp5w"]
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_1f0kj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ghaa6")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1dp5w")
+
+[node name="PathTimer" type="Timer" parent="."]

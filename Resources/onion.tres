@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="CropData" load_steps=2 format=3 uid="uid://cfjf8014e3auc"]
+
+[ext_resource type="Script" uid="uid://3qaudw6s0ctq" path="res://Scripts/CropData.gd" id="1_xp1qx"]
+
+[resource]
+script = ExtResource("1_xp1qx")
+duration = 10.0
+tile_name = "onion"
+atlas_coords = Array[Vector2i]([Vector2i(0, 7), Vector2i(1, 7), Vector2i(2, 7), Vector2i(3, 7), Vector2i(4, 7), Vector2i(5, 7)])
+source_id = 0
+metadata/_custom_type_script = "uid://3qaudw6s0ctq"
