@@ -15,5 +15,6 @@ var shotgun_reach : float = 150.0
 var is_night : bool = false
 var max_health: int = 100
 var current_health: int = 100
+var previous_scene: String = "res://Scenes/main_menu.tscn"
 
 signal health_changed(new_health)

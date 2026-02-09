@@ -15,7 +15,7 @@ func _on_hud_time_change(total_seconds:Variant) -> void:
 	modulate_node.color = final_color
 	var music_track : AudioStream
 
-	if total_seconds >= 200:
+	if total_seconds >= 200 or total_seconds < 60:
 		equipment.visible = false
 		shotgun.visible = true
 		music_track = battle_music

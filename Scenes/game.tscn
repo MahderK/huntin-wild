@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dxgmckeagdnej"]
+[gd_scene load_steps=44 format=3 uid="uid://dxgmckeagdnej"]
 
 [ext_resource type="PackedScene" uid="uid://dvexbqg2qy8mt" path="res://Scenes/player.tscn" id="1_ebmjs"]
 [ext_resource type="Script" uid="uid://bfmttqoe8icjx" path="res://Scripts/game.gd" id="1_iivbl"]
@@ -24,6 +24,8 @@
 [ext_resource type="Script" uid="uid://cimxvigdl865" path="res://Scripts/spawner.gd" id="22_7t8sx"]
 [ext_resource type="PackedScene" uid="uid://c2wjl0xl021jt" path="res://Scenes/enemy.tscn" id="23_mg4q0"]
 [ext_resource type="PackedScene" uid="uid://c8hewkmnopiym" path="res://Scenes/upgrade_menu.tscn" id="24_vm72l"]
+[ext_resource type="FontFile" uid="uid://d3egvirpmxftu" path="res://Assets/fonts/Daydream DEMO.otf" id="25_22asu"]
+[ext_resource type="PackedScene" uid="uid://bkoq1scf3xyar" path="res://Scenes/pause_menu.tscn" id="26_fkdbe"]
 
 [sub_resource type="Gradient" id="Gradient_iivbl"]
 offsets = PackedFloat32Array(0, 0.325581, 0.542636, 0.751938, 1)
@@ -471,6 +473,18 @@ layer_3/tile_data = PackedInt32Array(458810, 589827, 1, 524346, 589827, 2, 58988
 [node name="Farm Land" parent="." instance=ExtResource("21_exi56")]
 position = Vector2(387, 336)
 
+[node name="Tutorial" type="Label" parent="."]
+texture_filter = 1
+offset_left = 1102.0
+offset_top = 395.0
+offset_right = 1366.0
+offset_bottom = 479.0
+theme_override_fonts/font = ExtResource("25_22asu")
+text = "Plant: right-click
+Scroll: change
+Collect: Left-click
+shoot: Left-click"
+
 [node name="Player" parent="." instance=ExtResource("1_ebmjs")]
 position = Vector2(980, 208)
 
@@ -492,6 +506,10 @@ enemy_scene = ExtResource("23_mg4q0")
 [node name="Timer" type="Timer" parent="Spawner"]
 
 [node name="UpgradeMenu" parent="." instance=ExtResource("24_vm72l")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("26_fkdbe")]
 
 [connection signal="time_change" from="HUD" to="." method="_on_hud_time_change"]
 [connection signal="current_music" from="bg_music" to="." method="_on_bg_music_current_music"]

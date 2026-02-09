@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var label = $Clock
 @onready var timer = $Timer
 @onready var sun_label = $Pickup/SunCounter
-@onready var tot_time_in_sec : int = 190
+@onready var tot_time_in_sec : int = 60
 
 signal time_change(total_seconds)
 

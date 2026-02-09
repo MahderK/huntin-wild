@@ -1,0 +1,113 @@
+[gd_scene load_steps=8 format=3 uid="uid://bkoq1scf3xyar"]
+
+[ext_resource type="Script" uid="uid://bdr5n1gpy62t1" path="res://Scripts/pause_menu.gd" id="1_k0w1u"]
+[ext_resource type="Shader" uid="uid://bcrgtjcrknb0y" path="res://Resources/pause_menu.gdshader" id="2_1och7"]
+[ext_resource type="FontFile" uid="uid://d3egvirpmxftu" path="res://Assets/fonts/Daydream DEMO.otf" id="2_k0w1u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k0w1u"]
+shader = ExtResource("2_1och7")
+shader_parameter/lod = 0.0
+
+[sub_resource type="Animation" id="Animation_1och7"]
+resource_name = "blur"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.761]
+}
+
+[sub_resource type="Animation" id="Animation_bpi0q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bpi0q"]
+_data = {
+&"RESET": SubResource("Animation_bpi0q"),
+&"blur": SubResource("Animation_1och7")
+}
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k0w1u")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_k0w1u")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 226.0
+offset_right = 668.0
+offset_bottom = 426.0
+
+[node name="Label" type="Label" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 12.0
+offset_top = 18.0
+offset_right = 252.0
+offset_bottom = 73.0
+theme_override_fonts/font = ExtResource("2_k0w1u")
+text = "Are You sure you
+want to quit?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="Button" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 25.0
+offset_top = 126.0
+offset_right = 98.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("2_k0w1u")
+text = "Quit"
+
+[node name="Cancel" type="Button" parent="Panel"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 131.0
+offset_top = 124.0
+offset_right = 238.0
+offset_bottom = 158.0
+theme_override_fonts/font = ExtResource("2_k0w1u")
+text = "Cancel"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_bpi0q")
+}
+
+[connection signal="pressed" from="Panel/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Panel/Cancel" to="." method="_on_cancel_pressed"]
