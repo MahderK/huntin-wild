@@ -7,7 +7,7 @@ extends CharacterBody2D
 
 @onready var animated_sprite = $AnimatedSprite2D
 
-var attack_timer: float = 0.0
+var attack_timer: float = 0.0g
 
 func _physics_process(delta: float) -> void:
 	# 1. Day/Night Check
